@@ -1,0 +1,117 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+name: Custom MD
+scopeName: text.customMD
+fileTypes: [md]
+uuid: 4ea69873-9592-48c1-ad36-e31ae884fd9b
+
+patterns:
+- comment: Highlights First Title
+  name: markup.heading
+  match: ^\=[\s\S]+
+- comment: Highlights Subsequent Titles
+  name: variable.parameter
+  match: ^\=+[\s\S]+
+
+- comment: Formats pro/con lists
+  name: constant.character.md
+  contentName: comment.line
+  begin: \+\-
+  end: \-\+
+  patterns:
+  - name: markup.underline
+    match: ^\+[\w\s\W]+
+  - name: keyword.other
+    match: ^\-[\w\s\W]+
+  - name: variable.language
+    match: ^\?[\w\s\W]+
+
+
+- comment: Colours sub-important bullet points
+  name: support.function
+  match: \>\>[\s\w\W]+
+- comment: Colours > bullet points
+  name: support.function
+  match: ^\>
+- comment: Colours important bullet points
+  name: keyword.other
+  match: ^\*[\s\w\W]+
+- comment: Colours - bullet points
+  name: string.quoted
+  match: ^\-
+- comment: Colours ? bullet points and text
+  name: string.quoted
+  match: ^\?[\s\w\W]+
+- comment: Colours > bullet points [indented]
+  name: support.function
+  match: ^[\s]+\>
+- comment: Colours - bullet points [indented]
+  name: string.quoted
+  match: ^[\s]+\-
+- comment: Colours important bullet points
+  name: keyword.other
+  match: ^[\s]+\*[\s\w\W]+
+- comment: Colours ? bullet points and text [indented]
+  name: string.quoted
+  match: ^[\s]+\?[\s\w\W]+
+
+- comment: todo list - done
+  name: comment.line
+  match: '^\[x\][\w\s\W]+'
+- comment: todo list - cancelled
+  name: comment.line
+  match: '^\[-\][\w\s\W]+'
+- comment: todo list - important newline
+  name: keyword.other
+  match: '^\[\*\][\w\s\W]+'
+- comment: todo list - important
+  name: keyword.other
+  match: '^[\s]+\[\*\][\w\s\W]+'
+- comment: todo list - unsure
+  name: string.other
+  match: '^\[\?\][\w\s\W]+'
+- comment: todo list - not newline done/cancelled
+  name: comment.line
+  match: '^[\s]+\[[x\-]\][\w\s\W]+'
+- comment: todo list - delegated
+  name: storage.type
+  match: '^\[\>\][\w\s\W]+'
+- comment: todo list - not newline delegated
+  name: storage.type
+  match: '^[\s]+\[[\>]\][\w\s\W]+'
+- comment: todo list - tag
+  name: string.quoted
+  match: '\s#[\w]+'
+- comment: todo list - time
+  name: keyword.other
+  match: t\:[^\s]+
+
+- comment: Highlights text
+  name: constant.numeric
+  match: \[\[\w[\s\w\W]+\]\]
+- comment: Highlights text
+  name: keyword.control
+  match: \[\w[\s\w\W]+\]
+
+- comment: Formats times
+  name: markup.underline
+  match: '([\d]+\:\d{2})(\s\|\s[\w\s\W]+)'
+  captures: 
+    '1': { name: markup.underline}
+    '2': { name: markup.heading}
+
+- comment: Formats times
+  name: markup.underline
+  match: '[\d]+\:\d{2}'
+
+- comment: https link
+  name: string.other
+  match: https://[\w\W]+
+- comment: http link
+  name: string.other
+  match: http://[\w\W]+
+- comment: www link
+  name: string.other
+  match: www\.[\w\W]+
+- comment: non-www link
+  name: string.other
+  match: '[\w\W]+\.com[\w\W]+'

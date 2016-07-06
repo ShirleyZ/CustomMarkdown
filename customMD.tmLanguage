@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>md</string>
+	</array>
+	<key>name</key>
+	<string>Custom MD</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>comment</key>
+			<string>Highlights First Title</string>
+			<key>match</key>
+			<string>^\=[\s\S]+</string>
+			<key>name</key>
+			<string>markup.heading</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Highlights Subsequent Titles</string>
+			<key>match</key>
+			<string>^\=+[\s\S]+</string>
+			<key>name</key>
+			<string>variable.parameter</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>\+\-</string>
+			<key>comment</key>
+			<string>Formats pro/con lists</string>
+			<key>contentName</key>
+			<string>comment.line</string>
+			<key>end</key>
+			<string>\-\+</string>
+			<key>name</key>
+			<string>constant.character.md</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>^\+[\w\s\W]+</string>
+					<key>name</key>
+					<string>markup.underline</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>^\-[\w\s\W]+</string>
+					<key>name</key>
+					<string>keyword.other</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>^\?[\w\s\W]+</string>
+					<key>name</key>
+					<string>variable.language</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Colours sub-important bullet points</string>
+			<key>match</key>
+			<string>\&gt;\&gt;[\s\w\W]+</string>
+			<key>name</key>
+			<string>support.function</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Colours &gt; bullet points</string>
+			<key>match</key>
+			<string>^\&gt;</string>
+			<key>name</key>
+			<string>support.function</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Colours important bullet points</string>
+			<key>match</key>
+			<string>^\*[\s\w\W]+</string>
+			<key>name</key>
+			<string>keyword.other</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Colours - bullet points</string>
+			<key>match</key>
+			<string>^\-</string>
+			<key>name</key>
+			<string>string.quoted</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Colours ? bullet points and text</string>
+			<key>match</key>
+			<string>^\?[\s\w\W]+</string>
+			<key>name</key>
+			<string>string.quoted</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Colours &gt; bullet points [indented]</string>
+			<key>match</key>
+			<string>^[\s]+\&gt;</string>
+			<key>name</key>
+			<string>support.function</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Colours - bullet points [indented]</string>
+			<key>match</key>
+			<string>^[\s]+\-</string>
+			<key>name</key>
+			<string>string.quoted</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Colours important bullet points</string>
+			<key>match</key>
+			<string>^[\s]+\*[\s\w\W]+</string>
+			<key>name</key>
+			<string>keyword.other</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Colours ? bullet points and text [indented]</string>
+			<key>match</key>
+			<string>^[\s]+\?[\s\w\W]+</string>
+			<key>name</key>
+			<string>string.quoted</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>todo list - done</string>
+			<key>match</key>
+			<string>^\[x\][\w\s\W]+</string>
+			<key>name</key>
+			<string>comment.line</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>todo list - cancelled</string>
+			<key>match</key>
+			<string>^\[-\][\w\s\W]+</string>
+			<key>name</key>
+			<string>comment.line</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>todo list - important newline</string>
+			<key>match</key>
+			<string>^\[\*\][\w\s\W]+</string>
+			<key>name</key>
+			<string>keyword.other</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>todo list - important</string>
+			<key>match</key>
+			<string>^[\s]+\[\*\][\w\s\W]+</string>
+			<key>name</key>
+			<string>keyword.other</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>todo list - unsure</string>
+			<key>match</key>
+			<string>^\[\?\][\w\s\W]+</string>
+			<key>name</key>
+			<string>string.other</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>todo list - not newline done/cancelled</string>
+			<key>match</key>
+			<string>^[\s]+\[[x\-]\][\w\s\W]+</string>
+			<key>name</key>
+			<string>comment.line</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>todo list - delegated</string>
+			<key>match</key>
+			<string>^\[\&gt;\][\w\s\W]+</string>
+			<key>name</key>
+			<string>storage.type</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>todo list - not newline delegated</string>
+			<key>match</key>
+			<string>^[\s]+\[[\&gt;]\][\w\s\W]+</string>
+			<key>name</key>
+			<string>storage.type</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>todo list - tag</string>
+			<key>match</key>
+			<string>\s#[\w]+</string>
+			<key>name</key>
+			<string>string.quoted</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>todo list - time</string>
+			<key>match</key>
+			<string>t\:[^\s]+</string>
+			<key>name</key>
+			<string>keyword.other</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Highlights text</string>
+			<key>match</key>
+			<string>\[\[\w[\s\w\W]+\]\]</string>
+			<key>name</key>
+			<string>constant.numeric</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Highlights text</string>
+			<key>match</key>
+			<string>\[\w[\s\w\W]+\]</string>
+			<key>name</key>
+			<string>keyword.control</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>markup.underline</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>markup.heading</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>Formats times</string>
+			<key>match</key>
+			<string>([\d]+\:\d{2})(\s\|\s[\w\s\W]+)</string>
+			<key>name</key>
+			<string>markup.underline</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Formats times</string>
+			<key>match</key>
+			<string>[\d]+\:\d{2}</string>
+			<key>name</key>
+			<string>markup.underline</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>https link</string>
+			<key>match</key>
+			<string>https://[\w\W]+</string>
+			<key>name</key>
+			<string>string.other</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>http link</string>
+			<key>match</key>
+			<string>http://[\w\W]+</string>
+			<key>name</key>
+			<string>string.other</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>www link</string>
+			<key>match</key>
+			<string>www\.[\w\W]+</string>
+			<key>name</key>
+			<string>string.other</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>non-www link</string>
+			<key>match</key>
+			<string>[\w\W]+\.com[\w\W]+</string>
+			<key>name</key>
+			<string>string.other</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>text.customMD</string>
+	<key>uuid</key>
+	<string>4ea69873-9592-48c1-ad36-e31ae884fd9b</string>
+</dict>
+</plist>
