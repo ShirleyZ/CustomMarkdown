@@ -41,13 +41,19 @@ patterns:
 - comment: Colours ? bullet points and text
   name: string.quoted
   match: ^\?[\s\w\W]+
+- comment: Colours + bullet points and text
+  name: markup.underline
+  match: ^\+[\s\w\W]+
 - comment: Colours > bullet points [indented]
   name: support.function
   match: ^[\s]+\>
 - comment: Colours - bullet points [indented]
   name: string.quoted
   match: ^[\s]+\-
-- comment: Colours important bullet points
+- comment: Colours + bullet points and text [indented]
+  name: markup.underline
+  match: ^[\s]\+[\s\w\W]+
+- comment: Colours important bullet points [indented]
   name: keyword.other
   match: ^[\s]+\*[\s\w\W]+
 - comment: Colours ? bullet points and text [indented]
